@@ -1,0 +1,173 @@
+<nav class="navbar navbar-expand-lg bg-light fixed-top shadow-lg">
+    <div class="container">
+        <a class="navbar-brand mx-auto d-lg-none" href="index.html">
+            Medic Care
+            <strong class="d-block">Health Specialist</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#hero">Home</a>
+                </li>
+                
+                
+
+                
+                
+                
+                <!-- ... Ajoutez d'autres liens généraux ... -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">opening hours</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+               
+            </ul>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/login"  >
+                        <i class="bi bi-box-arrow-right" ></i> login
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Header pour le rôle de patient -->
+<div *ngIf="userRole === 'patient'">
+    <nav class="navbar navbar-expand-lg bg-light fixed-top shadow-lg">
+        <div class="container">
+            <a class="navbar-brand mx-auto d-lg-none" href="index.html">
+                Medic Care
+                <strong class="d-block">Health Specialist</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active">
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/profil" > Profil  </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/listmed">Doctors</a>
+                        </li>  
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/rendez">Appointments</a>
+                        </li>                     
+                    
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#logout"(click)="logout()" >
+                            <i class="bi bi-box-arrow-right"routerLink="/login"></i> Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+
+
+<!-- Header pour le rôle de secretaire -->
+<div *ngIf="userRole === 'secretaire'">
+    <nav class="navbar navbar-expand-lg bg-light fixed-top shadow-lg">
+        <div class="container">
+            <a class="navbar-brand mx-auto d-lg-none" href="index.html">
+                Medic Care
+                <strong class="d-block">Health Specialist</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active">
+
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/profil" > Profil  </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/listpatien"> Patients </a>
+                        </li>
+                        <li class="nav-item">
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/rendlist">Appointment</a>
+                            </li>
+                        
+
+            
+                    
+                    <!-- ... Ajoutez d'autres liens spécifiques au rôle de secretaire ... -->
+                
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/msg">Contact</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#logout"(click)="logout()" >
+                            <i class="bi bi-box-arrow-right"routerLink="/login"></i> Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+<!-- Header pour le rôle de medcin -->
+<div *ngIf="userRole === 'medecin'">
+    <nav class="navbar navbar-expand-lg bg-light fixed-top shadow-lg">
+        <div class="container">
+            <a class="navbar-brand mx-auto d-lg-none" href="index.html">
+                Medic Care
+                <strong class="d-block"  routerLink="/profil"  > Profil</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                   
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/profil" > Profil  </a>
+                    </li>
+                  
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/rendlist">Appointments</a>
+                    </li>
+                  
+                   
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/listsec">Ressources humaines</a>
+                    </li>
+                    
+                <li class="nav-item">
+                        <a class="nav-link" routerLink="/msg">Contact</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#logout"(click)="logout()" >
+                            <i class="bi bi-box-arrow-right"routerLink="/login"></i> Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>

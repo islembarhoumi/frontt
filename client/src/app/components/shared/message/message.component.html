@@ -1,0 +1,126 @@
+<div class="container mt-5">
+    <h2 class="mb-4">Send a message"</h2>
+    <div class="form-group">
+      <label for="nomParent">Full name:</label>
+      <input type="text" class="form-control" id="nomParent" [(ngModel)]="messageObject.nom">
+    </div>
+    <div class="form-group">
+      
+      
+      <label for="numeroParent">Phone number:</label>
+      <input type="text" class="form-control" id="numeroParent" [(ngModel)]="messageObject.numeroTelephone">
+    </div>
+    <div class="form-group">
+      <label for="objet">Subject:</label>
+      <input type="text" class="form-control" id="objet" [(ngModel)]="messageObject.objet">
+    </div>
+    <div class="form-group">
+      <label for="message">Message:</label>
+      <textarea class="form-control" id="message" rows="4" [(ngModel)]="messageObject.message"></textarea>
+    </div>
+    <button class="btn btn-primary" (click)="sendSMS()">Send SMS</button>
+  </div>
+  
+  <div *ngIf="messageSentDetails" class="container mt-5">
+    <h2>"The details of the message sent"</h2>
+    <p><strong>The current date:</strong> {{ messageSentDetails.date_created }}</p>
+    <p><strong>"Message sent":</strong></p>
+    <p>Hello Madam/Sir,  {{ messageObject.nom }} we are informing you that</p>
+    <p>{{ messageObject.message }}</p>
+  </div>
+  
+  
+  <style>
+    /* Styles pour le formulaire */
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #f8f9fa; /* Gris clair pour l'arrière-plan */
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      animation: slideIn 0.5s ease-in-out; /* Animation d'entrée */
+    }
+  
+    .form-group {
+      margin-bottom: 20px;
+    }
+  
+    label {
+      font-weight: bold;
+      color: #495057; /* Couleur de texte sombre */
+    }
+  
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ced4da;
+      border-radius: 5px;
+      background-color: #fff;
+      transition: border-color 0.3s ease-in-out;
+    }
+  
+    input[type="text"]:focus,
+    textarea:focus {
+      border-color: #007bff; /* Couleur de bordure lorsqu'en focus */
+    }
+  
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: #fff;
+      transition: background-color 0.3s ease-in-out;
+    }
+  
+    .btn-primary:hover {
+      background-color: #0056b3; /* Couleur plus sombre au survol */
+      border-color: #0056b3;
+    }
+  
+    /* Styles pour les détails du message envoyé */
+    .message-details {
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+      animation: fadeIn 0.5s ease-in-out; /* Animation de fondu */
+    }
+  
+    .message-details h2 {
+      color: #495057;
+    }
+  
+    .message-details p {
+      margin-bottom: 10px;
+    }
+  
+    .message-details strong {
+      font-weight: bold;
+    }
+  
+    /* Animation pour les éléments du formulaire */
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    /* Animation pour les détails du message envoyé */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>

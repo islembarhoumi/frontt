@@ -1,0 +1,27 @@
+<!-- rendezvous.component.html -->
+<div class="container mt-3">
+    <h2 class="mb-4"> Appointment Request </h2>
+    <form (ngSubmit)="submitForm()" #rendezvousForm="ngForm">
+      <div class="form-group">
+        <label for="date" class="mb-1">Date:</label>
+        <input type="date" class="form-control" id="date" name="date" required [(ngModel)]="rendezvous.date">
+      </div>
+      <div class="form-group">
+        <label for="heure" class="mb-1">Time:</label>
+        <input type="text" class="form-control" id="heure" name="heure"  pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]" placeholder="00:00:00" required>
+      </div>
+      <div class="form-group">
+        <label for="statut" class="mb-1">symptom :</label>
+        <input type="text" class="form-control" id="statut" name="statut" required [(ngModel)]="rendezvous.statut"  required>
+      </div>
+      <div class="form-group">
+        <label for="medcin" class="mb-1">Doctor:</label>
+        <select class="form-select" id="medcin" name="medcin" required [(ngModel)]="rendezvous.medcin" >
+          <option *ngFor="let medcin of medecinsList" [value]="medcin.id">
+            {{ medcin.nom }}    {{ medcin.prenom }}    {{ medcin.specialite }}
+          </option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary mt-3">save</button>
+    </form>
+  </div>  

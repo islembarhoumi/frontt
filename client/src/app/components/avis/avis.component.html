@@ -1,0 +1,23 @@
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Avis des Patients</h2>
+    <div class="row">
+      <div class="col-md-6 col-lg-3" *ngFor="let avis of avisList">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">{{ avis.nomPatient }}</h5>
+            <p class="card-text">{{ avis.commentaire }}</p>
+            <div class="rating">
+              <span class="star">&#9733;</span>
+              <span class="star">&#9733;</span>
+              <span class="star">&#9733;</span>
+              <span class="star">&#9734;</span>
+              <span class="star">&#9734;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+

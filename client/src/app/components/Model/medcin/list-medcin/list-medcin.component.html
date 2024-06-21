@@ -1,0 +1,30 @@
+<div *ngIf="medecins.length > 0; else noMedecins" class="container mt-4">
+  <h2 class="text-center mb-4">list of doctors</h2>
+  <div class="row">
+    <div class="col-md-6" *ngFor="let medecin of medecins">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title font-weight-bold text-primary">{{ medecin.nom }} {{ medecin.prenom }}</h5>
+          <p class="card-text"><strong>Specialty:</strong> {{ medecin.specialite }}</p>
+          <p class="card-text"><strong>Experience:</strong> {{ medecin.experience }} ans</p>
+          
+
+        
+          <div class="d-flex justify-content-end">
+            <button type="button" class="btn btn-link" (click)="incrementLikes(medecin)">
+              <i class="fa fa-heart text-success" *ngIf="medecin.likes > 0"></i>
+              <i class="fa fa-heart-o text-dark" *ngIf="medecin.likes === 0"></i>
+            </button>
+            <button type="button" class="btn btn-link" (click)="decrementLikes(medecin)">
+              <i class="fa fa-heart text-danger" *ngIf="medecin.likes > 0"></i>
+            </button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #noMedecins class="container mt-4">
+  <p class="alert alert-warning">Aucun médecin trouvé.</p>
+</ng-template>

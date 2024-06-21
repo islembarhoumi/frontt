@@ -1,0 +1,66 @@
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-text {
+    margin-bottom: 1rem;
+  }
+  
+  .rating {
+    color: #ffc107; /* Couleur des étoiles */
+    font-size: 1.2rem;
+  }
+  
+  .star {
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .star.filled {
+    color: #ff9800; /* Couleur des étoiles remplies */
+  }
+  
+
+
+  .container {
+    background-color: #f0f0f0; /* Couleur de fond gris */
+    padding: 20px;
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* Couleur de fond blanche pour les cartes */
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-text {
+    margin-bottom: 1rem;
+  }
+  
+  .rating {
+    color: #ffc107;
+    font-size: 1.2rem;
+  }
+  
+  .star {
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .star.filled {
+    color: #ff9800;
+  }
+  

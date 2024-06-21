@@ -1,0 +1,32 @@
+<div *ngIf="patients.length > 0; else nosec" class="container mt-4">
+  <h2 class="text-center mb-4">list of patients</h2>
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead class="table-primary">
+        <tr>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Disease</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Adress</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let patient of patients">
+          <td>{{ patient.nom }}</td>
+          <td>{{ patient.prenom }}</td>
+          <td>{{ patient.maladie }}</td>
+          <td>{{ patient.telephone }}</td>
+          <td>{{ patient.adresse }}</td>
+         
+            <!-- Afficher le statut du patient ici -->
+         
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<ng-template #nosec class="container mt-4">
+  <p class="alert alert-warning">Aucun Patient trouvé.</p>
+</ng-template>
